@@ -110,6 +110,19 @@ app.post('/webhook', async (req, res) => {
 
                     break;
                 }
+            default: {
+                res.send({
+                    "fulfillmentMessages": [
+                        {
+                            "text": {
+                                "text": [
+                                    "something is wrong in server, please try again"
+                                ]
+                            }
+                        }
+                    ]
+                })
+            }
         }
 
     }
